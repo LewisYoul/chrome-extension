@@ -1,8 +1,4 @@
-console.log(document.body.innerText.split(/[^a-zA-Z']/))
-
-var words = document.body.innerText.split(/[^a-zA-Z']/)
-
-function longestWord(string) {
+function returnLongestWord(string) {
 
   var words = string.split(/[^a-zA-Z']/)
   console.log(words.length)
@@ -17,6 +13,3 @@ function longestWord(string) {
   console.log(longest)
   return longest
 }
-
-
-longestWord(document.body.innerText)
