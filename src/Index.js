@@ -1,6 +1,6 @@
 var app = new App()
 
-var word = app.returnLongestWord(document.body.innerText).word
+var word = app.returnLongestWord(document.body.innerText).word.toLowerCase()
 
 $.ajax({
   url: "https://od-api.oxforddictionaries.com/api/v1/entries/en/" + word,
@@ -11,9 +11,15 @@ $.ajax({
   success: function(data) {
     console.log(data)
     var definition = data.results["0"].lexicalEntries["0"].entries["0"].senses["0"].definitions["0"]
+    var word = data.results["0"].word
     console.log(data.results["0"].lexicalEntries["0"].entries["0"].senses["0"].definitions["0"])
-    $('body').prepend('<div id="test">' + definition + '</div>')
+    $('body').prepend('<div id="test">' +word + ' - '+ definition + '</div>')
+    chrome.storage.local.set({
+      word: {
+        title: word,
+        definition: definition
+      }
+    });
+    console.log(word)
   }
 });
-
-chrome.storage.local.set({message: "hello"})

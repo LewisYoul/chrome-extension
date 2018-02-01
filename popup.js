@@ -1,7 +1,10 @@
-chrome.storage.local.get("message", function(data) {
-    if(typeof data.message == "undefined") {
+var data;
+
+chrome.storage.local.get("word", function(data) {
+    if(typeof data.word == "undefined") {
         console.log("oh no")
     } else {
-        console.log(data.message)
+        data = data
+        $('#popup').text(data.word.title + ' - ' + data.word.definition)
     }
 });
