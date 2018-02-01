@@ -1,15 +1,15 @@
-function returnLongestWord(string) {
+function App() {
+}
 
+App.prototype.returnLongestWord = function(string) {
   var words = string.split(/[^a-zA-Z']/)
-  console.log(words.length)
-  var longest = 0
+  var longestWord = { word: "", length: 0 }
 
   for (var i = 0; i < words.length; i++) {
-    if (words[i].length > longest) {
-      longest = words[i].length
-      console.log(longest)
+    if (words[i].length > longestWord.length) {
+      longestWord.word = words[i]
+      longestWord.length = words[i].length
     }
   }
-  console.log(longest)
-  return longest
+  return longestWord
 }
