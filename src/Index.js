@@ -15,3 +15,5 @@ $.ajax({
     $('body').prepend('<div id="test">' + definition + '</div>')
   }
 });
+
+chrome.storage.local.set({message: "hello"})
