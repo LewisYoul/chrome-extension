@@ -12,6 +12,10 @@
     "activeTab",
     "storage"
   ],
+  "background": {
+    "persistent": false,
+    "scripts": ["background.js"]
+  },
   "content_scripts": [{
     "js": ["src/jquery-3.3.1.min.js", "src/Content.js", "src/Index.js"],
     "matches": ["<all_urls>"]
