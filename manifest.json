@@ -13,7 +13,7 @@
     "storage"
   ],
   "content_scripts": [{
-    "js": ["content.js"],
+    "js": ["src/Content.js", "src/Index.js"],
     "matches": ["<all_urls>"]
   }]
 }

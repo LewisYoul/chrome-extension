@@ -1,0 +1,1 @@
+returnLongestWord(document.body.innerText)
