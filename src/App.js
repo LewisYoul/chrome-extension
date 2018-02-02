@@ -1,4 +1,5 @@
-function App() {
+function App(appView = new AppView()) {
+  this.appView = appView
 }
 
 App.prototype.sendGetRequest = function(selectedWord) {
@@ -11,7 +12,7 @@ App.prototype.sendGetRequest = function(selectedWord) {
     error: function(err) {
       console.log(err)
       $('#word-fact-div').remove()
-      $('body').prepend('<div id="word-fact-div" class="word">The dictionary does not know that word. Please try again.</div>')
+      $('body').prepend(this.appView.returnWordNotFound())
     },
     success: function(data) {
       console.log(data)

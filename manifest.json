@@ -18,7 +18,7 @@
   },
   "content_scripts": [{
     "css": ["src/app.css"],
-    "js": ["src/jquery-3.3.1.min.js", "src/Content.js", "src/Index.js"],
+    "js": ["src/jquery-3.3.1.min.js", "src/AppView.js", "src/App.js", "src/Index.js"],
     "matches": ["<all_urls>"]
   }]
 }
