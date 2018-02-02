@@ -25,3 +25,7 @@ App.prototype.splitWordsByCapital = function(wordsArray) {
 App.prototype._splitStringByPunct = function(string) {
   return string.split(/[^a-zA-Z']/)
 }
+
+App.prototype.isAlphabetical = function(string) {
+  return /[a-z]/i.test(string)
+}
