@@ -5,6 +5,7 @@ chrome.storage.local.get("word", function(data) {
         console.log("oh no")
     } else {
         data = data
-        $('#popup').text(data.word.title + ' - ' + data.word.definition)
+        $('#word').text(data.word.title)
+        $('#definition').text(data.word.definition)
     }
 });
