@@ -8,22 +8,13 @@ document.addEventListener("mouseup", function() {
       xhr.setRequestHeader('app_key', '631529d8a03ed59b7f9944f6a476bf21')
     },
     error: function(data) {
-      chrome.storage.local.set({
-        word: {
-          title: "Unknown",
-          definition: "Please select another word"
-        }
-      });
+      $('#word-fact-div').remove()
+      $('body').prepend('<div id="word-fact-div" class="word">The dictionary does not know that word. Please try again.</div>')
     },
     success: function(data) {
-      chrome.storage.local.set({
-        word: {
-          title: data.results["0"].word,
-          definition: data.results["0"].lexicalEntries["0"].entries["0"].senses["0"].definitions["0"]
-        }
-      });
+      console.log("ok")
       $('#word-fact-div').remove()
-      $('body').prepend('<div id="word-fact-div" style="z-index: 1000; position: fixed; bottom: 0; width: 100%; background-color: pink">'+ data.results["0"].word + ' - ' + data.results["0"].lexicalEntries["0"].entries["0"].senses["0"].definitions["0"] + '</div>')
+      $('body').prepend('<div id="word-fact-div" class="word">'+ data.results["0"].word + ' - ' + data.results["0"].lexicalEntries["0"].entries["0"].senses["0"].definitions["0"] + '</div>')
     }
   });
 });
