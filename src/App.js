@@ -3,6 +3,7 @@ function App(appView = new AppView()) {
 }
 
 App.prototype.sendGetRequest = function(selectedWord) {
+  var self = this
   $.ajax({
     url: "https://od-api.oxforddictionaries.com/api/v1/entries/en/" + selectedWord,
     beforeSend: function(xhr){
@@ -12,7 +13,7 @@ App.prototype.sendGetRequest = function(selectedWord) {
     error: function(err) {
       console.log(err)
       $('#word-fact-div').remove()
-      $('body').prepend(this.appView.returnWordNotFound())
+      $('body').prepend(self.appView.returnWordNotFound())
     },
     success: function(data) {
       console.log(data)
