@@ -3,9 +3,17 @@
   position: fixed;
   bottom: 0;
   right:0;
-  width: 15%;
-  height: 20%;
-  background-color: pink;
+  width: 12%;
+  background-color: #c2d1e8;
   margin: 20px;
-  padding: 5px;
+  padding: 10px;
+}
+
+.word-title {
+  color: black;
+  font-size: 25px !important;
+}
+
+.word-description {
+  font-size: 12px !important;
 }
