@@ -15,11 +15,11 @@ document.addEventListener("mouseup", function() {
         }
       });
       app.allEntries = allEntries
-      $('#word-fact-div').prepend(app.appView.returnWordInElements(app.allEntries[app.currentEntry]))
+      $('#word-fact-div').prepend(app.nextWordEntry(app.allEntries))
       $('#next').click(function() {
         $('#word-fact-div').remove()
         $('body').prepend('<div id="word-fact-div" class="word"></div>')
-        $('#word-fact-div').prepend(app.appView.returnWordInElements(app.allEntries[app.currentEntry + 1]))
+        $('#word-fact-div').prepend(app.nextWordEntry(app.allEntries))
       });
     });
   }

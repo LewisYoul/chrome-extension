@@ -68,4 +68,11 @@ describe("App", function() {
       expect(app.nextWordEntry(wordArray)).toEqual('<h1 class="word-title">stock</h1><p>Verb</p><p class="word-description">keep a particular product</p><p id="next">NEXT</p>')
     });
   });
+
+  describe("#incrementEntryByOne", function() {
+    it("increases the value of this.currentEntry by 1", function() {
+      app.incrementEntryByOne()
+      expect(app.currentEntry).toEqual(1)
+    });
+  });
 });

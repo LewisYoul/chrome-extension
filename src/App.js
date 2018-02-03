@@ -25,9 +25,14 @@ App.prototype.isAlphabetical = function(string) {
 
 App.prototype.nextWordEntry = function(wordArray) {
   if (wordArray[this.currentEntry]) {
-    return this.appView.returnWordInElements(wordArray[this.currentEntry])
+    this.incrementEntryByOne()
+    return this.appView.returnWordInElements(wordArray[this.currentEntry - 1])
   } else {
     this.currentEntry = 0
     return this.appView.returnWordInElements(wordArray[this.currentEntry])
   }
+}
+
+App.prototype.incrementEntryByOne = function() {
+  this.currentEntry += 1
 }
