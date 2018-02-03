@@ -22,3 +22,12 @@ App.prototype.sendGetRequest = function(selectedWord) {
 App.prototype.isAlphabetical = function(string) {
   return /[a-z]/i.test(string)
 }
+
+App.prototype.nextWordEntry = function(wordArray) {
+  if (wordArray[this.currentEntry]) {
+    return this.appView.returnWordInElements(wordArray[this.currentEntry])
+  } else {
+    this.currentEntry = 0
+    return this.appView.returnWordInElements(wordArray[this.currentEntry])
+  }
+}
