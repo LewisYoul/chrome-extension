@@ -18,7 +18,19 @@ App.prototype.sendGetRequest = function(selectedWord) {
     success: function(data) {
       console.log(data)
       $('#word-fact-div').remove()
-      $('body').prepend('<div id="word-fact-div" class="word"><h1 class="word-title">'+ data.results["0"].word + '</h1><p>' + data.results["0"].lexicalEntries["0"].lexicalCategory + '</p><p class="word-description">' + data.results["0"].lexicalEntries["0"].entries["0"].senses["0"].definitions["0"] + '</p></div>')
+      $('body').prepend('<div id="word-fact-div" class="word"></div>')
+      var allEntries = data.results["0"].lexicalEntries.map(function(entry) {
+        return {
+          word: entry.text,
+          lexicalCategory: entry.lexicalCategory,
+          definition: entry.entries["0"].senses["0"].definitions["0"]
+        }
+      });
+      console.log(allEntries)
+      allEntries.forEach(function(entry) {
+        console.log(entry)
+        $('#word-fact-div').prepend('<h1 class="word-title">'+ entry.word + '</h1><p>' + entry.lexicalCategory + '</p><p class="word-description">' + entry.definition + '</p>')
+      });
     }
   });
 }
