@@ -11,4 +11,15 @@ var appView;
       expect(appView.returnWordNotFound()).toEqual('<div id="word-fact-div" class="word">The dictionary does not know that word. Please try again.</div>')
     });
   });
+
+  describe("#returnWordInElements", function() {
+    it("returns the word, its lexicalCategory and its definition in HTML", function() {
+      var testWord = {
+        word: "stock",
+        lexicalCategory: "Verb",
+        definition: "keep a particular product"
+      }
+      expect(appView.returnWordInElements(testWord)).toEqual('<h1 class="word-title">stock</h1><p>Verb</p><p class="word-description">keep a particular product</p>')
+    });
+  });
 });

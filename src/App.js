@@ -29,7 +29,7 @@ App.prototype.sendGetRequest = function(selectedWord) {
       console.log(allEntries)
       allEntries.forEach(function(entry) {
         console.log(entry)
-        $('#word-fact-div').prepend('<h1 class="word-title">'+ entry.word + '</h1><p>' + entry.lexicalCategory + '</p><p class="word-description">' + entry.definition + '</p>')
+        $('#word-fact-div').prepend(self.appView.returnWordInElements(entry))
       });
     }
   });
