@@ -27,16 +27,20 @@ App.prototype.nextWordEntry = function(wordArray) {
   console.log(this.currentEntry)
   var htmlToInject;
   if (wordArray[this.currentEntry]) {
-    htmlToInject = this.appView.returnWordInElements(wordArray[this.currentEntry])
-    this.incrementEntryByOne()
+    htmlToInject = this._incrementAndReturnHTML(wordArray)
   } else {
     this.currentEntry = 0
-    htmlToInject = this.appView.returnWordInElements(wordArray[this.currentEntry])
-    this.incrementEntryByOne()
+    htmlToInject = this._incrementAndReturnHTML(wordArray)
   }
   return htmlToInject
 }
 
 App.prototype.incrementEntryByOne = function() {
   this.currentEntry += 1
+}
+
+App.prototype._incrementAndReturnHTML = function(wordArray) {
+  var htmlToInject = this.appView.returnWordInElements(wordArray[this.currentEntry])
+  this.incrementEntryByOne()
+  return htmlToInject
 }
