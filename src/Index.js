@@ -1,4 +1,5 @@
 var app = new App()
+var counter = 0
 
 document.addEventListener("mouseup", function() {
   selectedWord = document.getSelection().toString().toLowerCase()
@@ -16,11 +17,20 @@ document.addEventListener("mouseup", function() {
       });
       app.allEntries = allEntries
       $('#word-fact-div').prepend(app.nextWordEntry(app.allEntries))
-      $('#next').click(function() {
-        $('#word-fact-div').remove()
-        $('body').prepend('<div id="word-fact-div" class="word"></div>')
-        $('#word-fact-div').prepend(app.nextWordEntry(app.allEntries))
+
+      $('#next').click(removeAndAdd);
+
+      $(document.body).on('click', '#next', function() {
+        console.log("BOSHTY")
       });
     });
   }
 });
+
+function removeAndAdd() {
+  counter += 1
+  $('#word-div').remove()
+  $('#word-fact-div').prepend(app.nextWordEntry(app.allEntries))
+  $('#next').click(removeAndAdd)
+  console.log("Im the counter", counter)
+}

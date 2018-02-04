@@ -24,13 +24,17 @@ App.prototype.isAlphabetical = function(string) {
 }
 
 App.prototype.nextWordEntry = function(wordArray) {
+  console.log(this.currentEntry)
+  var htmlToInject;
   if (wordArray[this.currentEntry]) {
+    htmlToInject = this.appView.returnWordInElements(wordArray[this.currentEntry])
     this.incrementEntryByOne()
-    return this.appView.returnWordInElements(wordArray[this.currentEntry - 1])
   } else {
     this.currentEntry = 0
-    return this.appView.returnWordInElements(wordArray[this.currentEntry])
+    htmlToInject = this.appView.returnWordInElements(wordArray[this.currentEntry])
+    this.incrementEntryByOne()
   }
+  return htmlToInject
 }
 
 App.prototype.incrementEntryByOne = function() {
