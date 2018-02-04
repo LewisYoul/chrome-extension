@@ -1,17 +1,23 @@
 .word {
-  z-index: 1000;
-  position: fixed;
-  bottom: 0;
-  right:0;
-  width: 12%;
-  background-color: #c2d1e8;
-  margin: 20px;
-  padding: 10px;
+  z-index: 1000 !important;
+  position: fixed !important;
+  bottom: 0 !important;
+  right:0 !important;
+  width: 12% !important;
+  background-color: #c2d1e8 !important;
+  margin: 20px !important;
+  padding: 10px !important;
 }
 
 .word-title {
-  color: black;
+  font-family: "Times New Roman", Times, serif !important;
+  color: black !important;
   font-size: 25px !important;
+}
+
+.word-lexicon {
+  margin-top: -15px !important;
+  color: grey !important;
 }
 
 .word-description {

@@ -6,5 +6,5 @@ AppView.prototype.returnWordNotFound = function() {
 }
 
 AppView.prototype.returnWordInElements = function(entry) {
-  return '<div id="word-div"><h1 class="word-title">'+ entry.word + '</h1><p>' + entry.lexicalCategory + '</p><p class="word-description">' + entry.definition + '</p><p id="next">NEXT</p></div>'
+  return '<div id="word-div"><h1 class="word-title">'+ entry.word + '</h1><p class="word-lexicon">' + entry.lexicalCategory + '</p><p class="word-description">' + entry.definition + '</p><p id="next">NEXT</p></div>'
 }
