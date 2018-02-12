@@ -2,7 +2,7 @@
 
 This is a chrome extension that allows you to highlight a word on any web page and obtain its definition(s) from the Oxford Dictionary.
 
-It is still a work in progress.
+It is still a work in progress - the api does not like plurals and there is an occasional word (for example 'practice') where nothing is rendered despite the call being successful.
 
 ## To Do
 
