@@ -11,4 +11,5 @@ It is still a work in progress.
 * Select 'Load unpacked extension...' and navigate to the directory to which you cloned.
 * Once you have loaded the extension an icon should appear in the top right of chrome.
 * Load a new page and highlight a word - assuming it is a real English word the definition will appear in the bottom right of the page in a light blue box.
+* If the word has different lexical entries you can cycle through them using the right arrow.
 * To remove the extension right click the icon on chrome and select 'Remove from Chrome'.
