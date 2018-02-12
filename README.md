@@ -4,6 +4,13 @@ This is a chrome extension that allows you to highlight a word on any web page a
 
 It is still a work in progress.
 
+# To Do
+
+* Fix styling - currently inherits from original page
+* Add left arrow cycle button
+* Add number of lexical entries so you know how many to cycle through
+* Add information - perhaps previous or saved searches to the popup.html
+
 ## Set Up
 
 * Clone this repo
@@ -13,3 +20,7 @@ It is still a work in progress.
 * Load a new page and highlight a word - assuming it is a real English word the definition will appear in the bottom right of the page in a light blue box.
 * If the word has different lexical entries you can cycle through them using the right arrow.
 * To remove the extension right click the icon on chrome and select 'Remove from Chrome'.
+
+## Tech
+
+JavaScript, JQuery
