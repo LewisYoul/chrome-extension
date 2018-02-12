@@ -12,5 +12,5 @@ AppView.prototype.returnWordInElements = function(wordArray, currentEntry) {
     '</h1><p class="word-lexicon">' + entry.lexicalCategory +
     '</p><p class="word-description">' + entry.definition +
     '</p><p>' + (currentEntry + 1) + ' of ' + wordArray.length +
-    '<div id="next"><i id="next" class="fas fa-arrow-right"></i></div></div>'
+    '</p><div id="next"><i id="next" class="fas fa-arrow-right"></i></div></div>'
 }
