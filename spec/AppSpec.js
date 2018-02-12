@@ -43,7 +43,7 @@ describe("App", function() {
       expect(app.appView.returnWordInElements).toHaveBeenCalledWith(wordArray, 0)
     });
     it("returns the second entry in the array", function() {
-      app.currentEntry = 1
+      app.currentEntry = 0
       app.nextWordEntry(wordArray)
       expect(app.appView.returnWordInElements).toHaveBeenCalledWith(wordArray, 1)
     });
@@ -57,6 +57,22 @@ describe("App", function() {
   describe("#incrementEntryByOne", function() {
     it("increases the value of this.currentEntry by 1", function() {
       app.incrementEntryByOne()
+      expect(app.currentEntry).toEqual(0)
+    });
+  });
+
+  describe("#previousWordEntry", function() {
+    it("renders the previous entry in the array", function() {
+      app.currentEntry = 1
+      app.previousWordEntry(wordArray)
+      expect(app.appView.returnWordInElements).toHaveBeenCalledWith(wordArray, 0)
+    });
+  });
+
+  describe("#decreaseEntryByOne", function() {
+    it("decreases the value of this.currentEntry by 1", function() {
+      app.currentEntry = 2
+      app.decreaseEntryByOne()
       expect(app.currentEntry).toEqual(1)
     });
   });

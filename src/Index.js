@@ -17,8 +17,6 @@ document.addEventListener("mouseup", function() {
       app.allEntries = allEntries
       $('#word-fact-div').prepend(app.nextWordEntry(app.allEntries))
       $('#next').click(removeAndAdd);
-      $(document.body).on('click', '#next', function() {
-      });
     });
   }
 });

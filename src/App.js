@@ -1,6 +1,6 @@
 function App(appView = new AppView()) {
   this.appView = appView
-  this.currentEntry = 0
+  this.currentEntry = -1
 }
 
 App.prototype.sendGetRequest = function(selectedWord) {
@@ -24,22 +24,26 @@ App.prototype.isAlphabetical = function(string) {
 }
 
 App.prototype.nextWordEntry = function(wordArray) {
-  var htmlToInject;
+  this.incrementEntryByOne()
   if (wordArray[this.currentEntry]) {
-    htmlToInject = this._incrementAndReturnHTML(wordArray)
+    return this.appView.returnWordInElements(wordArray, this.currentEntry)
   } else {
     this.currentEntry = 0
-    htmlToInject = this._incrementAndReturnHTML(wordArray)
+    return this.appView.returnWordInElements(wordArray, this.currentEntry)
   }
-  return htmlToInject
+}
+
+App.prototype.previousWordEntry = function(wordArray) {
+  this.decreaseEntryByOne()
+  if (wordArray[this.currentEntry]) {
+    return this.appView.returnWordInElements(wordArray, this.currentEntry)
+  }
 }
 
 App.prototype.incrementEntryByOne = function() {
   this.currentEntry += 1
 }
 
-App.prototype._incrementAndReturnHTML = function(wordArray) {
-  var htmlToInject = this.appView.returnWordInElements(wordArray, this.currentEntry)
-  this.incrementEntryByOne()
-  return htmlToInject
+App.prototype.decreaseEntryByOne = function() {
+  this.currentEntry -= 1
 }
