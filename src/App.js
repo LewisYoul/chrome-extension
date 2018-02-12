@@ -27,10 +27,9 @@ App.prototype.nextWordEntry = function(wordArray) {
   this.incrementEntryByOne()
   if (wordArray[this.currentEntry]) {
     return this.appView.returnWordInElements(wordArray, this.currentEntry)
-  } else {
-    this.currentEntry = 0
-    return this.appView.returnWordInElements(wordArray, this.currentEntry)
   }
+  this.currentEntry = 0
+  return this.appView.returnWordInElements(wordArray, this.currentEntry)
 }
 
 App.prototype.previousWordEntry = function(wordArray) {
@@ -38,6 +37,8 @@ App.prototype.previousWordEntry = function(wordArray) {
   if (wordArray[this.currentEntry]) {
     return this.appView.returnWordInElements(wordArray, this.currentEntry)
   }
+  this.currentEntry = wordArray.length - 1
+  return this.appView.returnWordInElements(wordArray, this.currentEntry)
 }
 
 App.prototype.incrementEntryByOne = function() {

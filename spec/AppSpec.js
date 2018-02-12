@@ -62,10 +62,15 @@ describe("App", function() {
   });
 
   describe("#previousWordEntry", function() {
-    it("renders the previous entry in the array", function() {
+    it("renders the previous entry in the array if it exists", function() {
       app.currentEntry = 1
       app.previousWordEntry(wordArray)
       expect(app.appView.returnWordInElements).toHaveBeenCalledWith(wordArray, 0)
+    });
+    it ("renders the last entry in the array if the previous entry was the first", function() {
+      app.currentEntry = 0
+      app.previousWordEntry(wordArray)
+      expect(app.appView.returnWordInElements).toHaveBeenCalledWith(wordArray, wordArray.length - 1)
     });
   });
 
