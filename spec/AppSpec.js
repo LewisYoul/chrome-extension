@@ -53,9 +53,10 @@ describe("App", function() {
         }
       ]
       app.currentEntry = 1
-      expect(app.nextWordEntry(wordArray)).toEqual('<IN ELEMENTS>')
+      app.nextWordEntry(wordArray)
+      expect(app.appView.returnWordInElements).toHaveBeenCalledWith(wordArray, 1)
     });
-    it("returns the second entry in the array", function() {
+    it("returns the first entry in array when the currentEntry doesnt exist", function() {
       var wordArray = [
         {
           word: "stock",
@@ -69,7 +70,8 @@ describe("App", function() {
         }
       ]
       app.currentEntry = 2
-      expect(app.nextWordEntry(wordArray)).toEqual('<IN ELEMENTS>')
+      app.nextWordEntry(wordArray)
+      expect(app.appView.returnWordInElements).toHaveBeenCalledWith(wordArray, 0)
       console.log(app.currentEntry)
     });
   });

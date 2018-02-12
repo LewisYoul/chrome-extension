@@ -24,7 +24,6 @@ App.prototype.isAlphabetical = function(string) {
 }
 
 App.prototype.nextWordEntry = function(wordArray) {
-  console.log(this.currentEntry)
   var htmlToInject;
   if (wordArray[this.currentEntry]) {
     htmlToInject = this._incrementAndReturnHTML(wordArray)
@@ -40,7 +39,7 @@ App.prototype.incrementEntryByOne = function() {
 }
 
 App.prototype._incrementAndReturnHTML = function(wordArray) {
-  var htmlToInject = this.appView.returnWordInElements(wordArray[this.currentEntry])
+  var htmlToInject = this.appView.returnWordInElements(wordArray, this.currentEntry)
   this.incrementEntryByOne()
   return htmlToInject
 }
