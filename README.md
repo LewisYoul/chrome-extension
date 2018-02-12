@@ -7,7 +7,9 @@ It is still a work in progress - the api does not like plurals and there is an o
 ## To Do
 
 * Fix styling - currently inherits from original page
-* Add left arrow cycle button
+* Add functionality to left arrow cycle button
+* Refactor #previousWordEntry and #nextWordEntry into a single method
+* Refactor the removal and addition of #word-fact-div and #word-div in to a standalone method
 * Fix bug where some words are obtained from API but not rendered
 * Add information - perhaps previous or saved searches to the popup.html
 * Add more informative message when word is not found
