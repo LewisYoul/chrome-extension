@@ -8,8 +8,9 @@ It is still a work in progress.
 
 * Fix styling - currently inherits from original page
 * Add left arrow cycle button
-* Add number of lexical entries so you know how many to cycle through
+* Fix bug where some words are obtained from API but not rendered
 * Add information - perhaps previous or saved searches to the popup.html
+* Add more informative message when word is not found
 
 ## Set Up
 
