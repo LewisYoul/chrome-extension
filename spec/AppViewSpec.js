@@ -19,7 +19,7 @@ var appView;
         lexicalCategory: "Verb",
         definition: "keep a particular product"
       }
-      expect(appView.returnWordInElements(testWord)).toEqual('<div id="word-div"><h1 class="word-title">stock</h1><p class="word-lexicon">Verb</p><p class="word-description">keep a particular product</p><div id="next">NEXT</div></div>')
+      expect(appView.returnWordInElements(testWord)).toEqual('<div id="word-div"><h1 class="word-title">stock</h1><p class="word-lexicon">Verb</p><p class="word-description">keep a particular product</p><div id="next"><i id="next" class="fas fa-arrow-right"></i></div></div>')
     });
   });
 });
