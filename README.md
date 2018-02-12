@@ -4,7 +4,7 @@ This is a chrome extension that allows you to highlight a word on any web page a
 
 It is still a work in progress.
 
-# To Do
+## To Do
 
 * Fix styling - currently inherits from original page
 * Add left arrow cycle button
