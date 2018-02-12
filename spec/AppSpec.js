@@ -1,10 +1,24 @@
 describe("App", function() {
 
   beforeEach(function() {
+    wordArray = [
+      {
+        word: "stock",
+        lexicalCategory: "Verb",
+        definition: "keep a particular product"
+      },
+      {
+        word: "cat",
+        lexicalCategory: "Noun",
+        definition: "not a dog"
+      }
+    ]
+
     appView = jasmine.createSpyObj('AppView', {
       returnWordNotFound: '<NOT FOUND>',
       returnWordInElements: '<IN ELEMENTS>'
     });
+
     app = new App(appView)
   });
 
@@ -25,54 +39,18 @@ describe("App", function() {
 
   describe("#nextWordEntry", function() {
     it("returns the first entry in the array", function() {
-      var wordArray = [
-        {
-          word: "stock",
-          lexicalCategory: "Verb",
-          definition: "keep a particular product"
-        },
-        {
-          word: "cat",
-          lexicalCategory: "Noun",
-          definition: "not a dog"
-        }
-      ]
-      expect(app.nextWordEntry(wordArray)).toEqual('<IN ELEMENTS>')
+      app.nextWordEntry(wordArray)
+      expect(app.appView.returnWordInElements).toHaveBeenCalledWith(wordArray, 0)
     });
     it("returns the second entry in the array", function() {
-      var wordArray = [
-        {
-          word: "stock",
-          lexicalCategory: "Verb",
-          definition: "keep a particular product"
-        },
-        {
-          word: "cat",
-          lexicalCategory: "Noun",
-          definition: "not a dog"
-        }
-      ]
       app.currentEntry = 1
       app.nextWordEntry(wordArray)
       expect(app.appView.returnWordInElements).toHaveBeenCalledWith(wordArray, 1)
     });
     it("returns the first entry in array when the currentEntry doesnt exist", function() {
-      var wordArray = [
-        {
-          word: "stock",
-          lexicalCategory: "Verb",
-          definition: "keep a particular product"
-        },
-        {
-          word: "cat",
-          lexicalCategory: "Noun",
-          definition: "not a dog"
-        }
-      ]
       app.currentEntry = 2
       app.nextWordEntry(wordArray)
       expect(app.appView.returnWordInElements).toHaveBeenCalledWith(wordArray, 0)
-      console.log(app.currentEntry)
     });
   });
 
