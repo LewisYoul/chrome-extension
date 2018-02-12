@@ -29,8 +29,17 @@ var appView;
     it("returns the word inside an <h1> with class 'word-title'", function() {
       expect(appView.returnWordInElements(testArray, currentEntry)).toContain('<h1 class="word-title">stock</h1>')
     });
+    it("returns the word-description inside a <p> with class 'word-description'", function() {
+      expect(appView.returnWordInElements(testArray, currentEntry)).toContain('<p class="word-description">keep a particular product</p>')
+    });
     it("renders the number of lexical entries", function() {
       expect(appView.returnWordInElements(testArray, currentEntry)).toContain('<p>1 of 2</p>')
+    });
+    it("renders the 'next(right)' arrow", function() {
+      expect(appView.returnWordInElements(testArray, currentEntry)).toContain('<div id="next"><i class="fas fa-arrow-right"></i></div>')
+    });
+    it("renders the 'previous(left)' arrow", function() {
+      expect(appView.returnWordInElements(testArray, currentEntry)).toContain('<div id="previous"><i class="fas fa-arrow-left"></i></div>')
     });
   });
 });

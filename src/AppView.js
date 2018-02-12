@@ -7,10 +7,9 @@ AppView.prototype.returnWordNotFound = function() {
 
 AppView.prototype.returnWordInElements = function(wordArray, currentEntry) {
   var entry = wordArray[currentEntry]
-  console.log("current entry number", entry)
   return '<div id="word-div"><h1 class="word-title">' + entry.word +
     '</h1><p class="word-lexicon">' + entry.lexicalCategory +
     '</p><p class="word-description">' + entry.definition +
     '</p><p>' + (currentEntry + 1) + ' of ' + wordArray.length +
-    '</p><div id="next"><i id="next" class="fas fa-arrow-right"></i></div></div>'
+    '</p><div id="previous"><i class="fas fa-arrow-left"></i></div><div id="next"><i class="fas fa-arrow-right"></i></div></div>'
 }
